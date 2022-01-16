@@ -1,0 +1,12 @@
+.show-area__container {
+    width: 100%;
+    height: 100%;
+}
+
+.show-area__container>iframe {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    margin: 0;
+    border: none;
+}
