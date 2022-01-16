@@ -2,13 +2,14 @@
 
 let decoderLanguajes = () => {
     let decoder = ({ encripted }) => {
+        console.log(encripted);
         try {
-            let [encriptedJs, encriptedCss, encriptedHtml] = encripted.split("|");
+            let [encriptedJs, encriptedCss, encriptedHtml] = encripted.split("%7C");
 
             return {
-                js: window.atob(encriptedJs),
-                css: window.atob(encriptedCss),
-                html: window.atob(encriptedHtml),
+                js: Base64.decode(encriptedJs),
+                css: Base64.decode(encriptedCss),
+                html: Base64.decode(encriptedHtml),
             };
         } catch (error) {
             console.error(error.message);
@@ -21,10 +22,8 @@ let decoderLanguajes = () => {
     };
     let encoder = (toEncript) => {
         let { js, css, html } = toEncript;
-        let encripted = `${window.btoa(js)}|${window.btoa(css)}|${window.btoa(
-      html
-    )}`;
 
+        let encripted = `${Base64.encode(js)}%7C${Base64.encode(css)}%7C${Base64.encode(html)}`;
         return encripted;
     };
 

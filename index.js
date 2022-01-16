@@ -4,8 +4,8 @@ import { manageLocation, decoderLanguajes } from "./modules/helpers/index.js";
 document.addEventListener("DOMContentLoaded", () => {
     let { getQuery } = manageLocation();
     let { decoder } = decoderLanguajes();
-    let initJs,
-        initCss,
+    let initJs = "",
+        initCss = "",
         initHtml = "";
 
     if (getQuery("data").data) {

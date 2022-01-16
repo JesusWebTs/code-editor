@@ -56,7 +56,7 @@ const appInit = (props) => {
         },
     });
 
-    let $grid = RezisableGrid({
+    const $grid = RezisableGrid({
         parent: $app,
     });
 

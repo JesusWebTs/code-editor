@@ -1,12 +1,12 @@
 const manageLocation = () => {
     let getQuery = (query) => {
-        let queryString = new URLSearchParams(window.location.search);
+        let queryString = window.location.search.replace("?data=", "");
+
         return {
-            [`${query}`]: queryString.get(query),
+            [`${query}`]: queryString,
         };
     };
     let setQuery = ({ query, value }) => {
-        let queryString = new URLSearchParams(window.location.search);
         window.history.replaceState(null, null, `/?${query}=${value}`);
         return {
             [`${query}`]: value,
