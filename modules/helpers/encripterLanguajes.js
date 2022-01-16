@@ -2,7 +2,6 @@
 
 let decoderLanguajes = () => {
     let decoder = ({ encripted }) => {
-        console.log(encripted);
         try {
             let [encriptedJs, encriptedCss, encriptedHtml] = encripted.split("%7C");
 

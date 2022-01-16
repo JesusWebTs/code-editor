@@ -11,8 +11,6 @@ const appInit = (props) => {
     let { encoder } = decoderLanguajes();
     let { setQuery } = manageLocation();
 
-    console.log({ initCss, initHtml, initJs });
-
     const js = new UseState({
         initValue: initJs,
         onChange: (value) => {

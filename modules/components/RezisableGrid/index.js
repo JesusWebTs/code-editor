@@ -23,8 +23,6 @@ const resizableGrid = (props) => {
         }, ],
     });
 
-    console.log(Split);
-
     return $containerGrid;
 };
 
