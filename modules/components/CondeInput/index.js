@@ -15,8 +15,7 @@ const CodeInput = (props) => {
         language = "javascript";
     }
     $monacoEditor.setAttribute("language", language);
-    $monacoEditor.automaticLayout = true;
-    $monacoEditor.setAttribute("automaticLayout", "");
+
     $monacoEditor.addEventListener("keyup", (e) => {
         onChange(e.target.value);
     });
