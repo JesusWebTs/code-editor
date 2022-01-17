@@ -1,0 +1,4 @@
+.gutter-col,
+.gutter-row {
+    z-index: 1000;
+}

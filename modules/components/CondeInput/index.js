@@ -7,6 +7,7 @@ const CodeInput = (props) => {
 
     $logoImage.src = `../../../assets/images/${imgName}`;
     $monacoEditor.setAttribute("id", language);
+    $monacoEditor.className = "editor";
     $monacoEditor.setAttribute("no-minimap", "");
     $section.className = "input__container";
 
@@ -14,6 +15,8 @@ const CodeInput = (props) => {
         language = "javascript";
     }
     $monacoEditor.setAttribute("language", language);
+    $monacoEditor.automaticLayout = true;
+    $monacoEditor.setAttribute("automaticLayout", "");
     $monacoEditor.addEventListener("keyup", (e) => {
         onChange(e.target.value);
     });
