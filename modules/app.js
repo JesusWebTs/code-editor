@@ -3,12 +3,12 @@ import { CondeInput, CodeViewer, RezisableGrid } from "./components/index.js";
 import { UseState } from "./helpers/index.js";
 import clasicTemplate from "./Templates/clasicTemplate.js";
 
-import { manageLocation, decoderLanguajes } from "./helpers/index.js";
+import { manageLocation, decoderLanguages } from "./helpers/index.js";
 
 const appInit = (props) => {
-    const { initJs = "", initCss = "", initHtml = "", appId } = props;
+    const { initJs = "", initCss = "", initHtml = "", appId = "app" } = props;
     const $app = document.getElementById(appId);
-    let { encoder } = decoderLanguajes();
+    let { encoder } = decoderLanguages();
     let { setQuery } = manageLocation();
 
     const js = new UseState({
@@ -62,7 +62,7 @@ const appInit = (props) => {
         onChange: (value) => {
             html.setValue(value);
         },
-        languaje: "html",
+        language: "html",
         parent: $grid,
         imgName: "html.png",
         initValue: html.value,
@@ -71,7 +71,7 @@ const appInit = (props) => {
         onChange: (value) => {
             js.setValue(value);
         },
-        languaje: "js",
+        language: "js",
         parent: $grid,
         imgName: "js.svg",
         initValue: js.value,
@@ -80,7 +80,7 @@ const appInit = (props) => {
         onChange: (value) => {
             css.setValue(value);
         },
-        languaje: "css",
+        language: "css",
         parent: $grid,
         imgName: "css.png",
         initValue: css.value,

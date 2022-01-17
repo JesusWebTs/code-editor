@@ -1,5 +1,5 @@
 import UseState from "./UseState.js";
 import manageLocation from "./manageLocation.js";
-import decoderLanguajes from "./encripterLanguajes.js";
+import decoderLanguages from "./encripterLanguages.js";
 
-export { UseState, manageLocation, decoderLanguajes };
+export { UseState, manageLocation, decoderLanguages };

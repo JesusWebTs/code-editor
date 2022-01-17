@@ -1,9 +1,9 @@
 import appInit from "./modules/app.js";
-import { manageLocation, decoderLanguajes } from "./modules/helpers/index.js";
+import { manageLocation, decoderLanguages } from "./modules/helpers/index.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     let { getQuery } = manageLocation();
-    let { decoder } = decoderLanguajes();
+    let { decoder } = decoderLanguages();
     let initJs = "",
         initCss = "",
         initHtml = "";

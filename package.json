@@ -15,5 +15,9 @@
         "Node"
     ],
     "author": "jesus.jsweb@gmail.com",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "@vanillawc/wc-monaco-editor": "^1.10.15",
+        "monaco-editor": "^0.31.1"
+    }
 }

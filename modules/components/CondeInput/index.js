@@ -1,23 +1,30 @@
 const CodeInput = (props) => {
-    let { onChange, languaje, parent, imgName, initValue } = props;
+    let { onChange, language, parent, imgName, initValue } = props;
     let $div = document.createElement("div");
     let $section = document.createElement("section");
-    let $textArea = document.createElement("textarea");
+    let $monacoEditor = document.createElement("wc-monaco-editor");
+    let $logoImage = document.createElement("img");
 
-    $textArea.setAttribute(
-        "style",
-        `--img_url: url(../../../assets/images/${imgName});`
-    );
-    $div.appendChild($section);
-    parent.appendChild($div);
+    $logoImage.src = `../../../assets/images/${imgName}`;
+    $monacoEditor.setAttribute("id", language);
+    $monacoEditor.setAttribute("no-minimap", "");
     $section.className = "input__container";
-    $section.appendChild($textArea);
-    $textArea.setAttribute("placeholder", languaje);
-    $textArea.value = initValue;
 
-    $textArea.addEventListener("input", (e) => {
+    if (language === "js") {
+        language = "javascript";
+    }
+    $monacoEditor.setAttribute("language", language);
+    $monacoEditor.addEventListener("input", (e) => {
         onChange(e.target.value);
     });
+    setTimeout(() => {
+        $monacoEditor.value = initValue;
+    }, 0);
+
+    parent.appendChild($div);
+    $div.appendChild($section);
+    $section.appendChild($logoImage);
+    $section.appendChild($monacoEditor);
 
     return $section;
 };

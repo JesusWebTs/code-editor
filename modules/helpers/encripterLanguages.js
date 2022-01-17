@@ -1,6 +1,6 @@
 /* library js-base64 */
 
-let decoderLanguajes = () => {
+let decoderLanguages = () => {
     let decoder = ({ encripted }) => {
         try {
             let [encriptedJs, encriptedCss, encriptedHtml] = encripted.split("%7C");
@@ -22,11 +22,13 @@ let decoderLanguajes = () => {
     let encoder = (toEncript) => {
         let { js, css, html } = toEncript;
 
-        let encripted = `${Base64.encode(js)}%7C${Base64.encode(css)}%7C${Base64.encode(html)}`;
+        let encripted = `${Base64.encode(js)}%7C${Base64.encode(
+      css
+    )}%7C${Base64.encode(html)}`;
         return encripted;
     };
 
     return { encoder, decoder };
 };
 
-export default decoderLanguajes;
+export default decoderLanguages;
