@@ -14,7 +14,7 @@ const CodeInput = (props) => {
         language = "javascript";
     }
     $monacoEditor.setAttribute("language", language);
-    $monacoEditor.addEventListener("input", (e) => {
+    $monacoEditor.addEventListener("keyup", (e) => {
         onChange(e.target.value);
     });
     setTimeout(() => {
