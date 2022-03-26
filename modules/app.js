@@ -67,24 +67,24 @@ const appInit = (props) => {
         imgName: "html.png",
         initValue: html.value,
     });
-    const $js = CondeInput({
-        onChange: (value) => {
-            js.setValue(value);
-        },
-        language: "js",
-        parent: $grid,
-        imgName: "js.svg",
-        initValue: js.value,
-    });
-    const $css = CondeInput({
-        onChange: (value) => {
-            css.setValue(value);
-        },
-        language: "css",
-        parent: $grid,
-        imgName: "css.png",
-        initValue: css.value,
-    });
+    /*   const $js = CondeInput({
+          onChange: (value) => {
+              js.setValue(value);
+          },
+          language: "js",
+          parent: $grid,
+          imgName: "js.svg",
+          initValue: js.value,
+      });
+      const $css = CondeInput({
+          onChange: (value) => {
+              css.setValue(value);
+          },
+          language: "css",
+          parent: $grid,
+          imgName: "css.png",
+          initValue: css.value,
+      }); */
 
     const [_, setData] = CodeViewer({ parent: $grid });
 
