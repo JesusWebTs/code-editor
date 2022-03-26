@@ -1,9 +1,16 @@
 const CodeInput = (props) => {
-    let { onChange, language, parent, imgName, initValue } = props;
+    let {
+        onChange,
+        language,
+        parent,
+        imgName,
+        initValue
+    } = props;
     let $div = document.createElement("div");
     let $section = document.createElement("section");
     let $monacoEditor = document.createElement("wc-monaco-editor");
     let $logoImage = document.createElement("img");
+    let prev = ""
 
     $logoImage.src = `../../../assets/images/${imgName}`;
     $monacoEditor.setAttribute("id", language);
@@ -17,7 +24,8 @@ const CodeInput = (props) => {
     $monacoEditor.setAttribute("language", language);
 
     $monacoEditor.addEventListener("keyup", (e) => {
-        onChange(e.target.value);
+        let code = e.target.parentElement.parentElement.parentElement.value
+        onChange(code)
     });
     setTimeout(() => {
         $monacoEditor.value = initValue;
